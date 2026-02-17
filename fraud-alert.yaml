@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: fraud-alert-rules
+  labels:
+    release: monitoring
+spec:
+  groups:
+  - name: fraud.rules
+    rules:
+    - alert: HighFraudRate
+      expr: rate(high_risk_transactions_total[2m]) > 2
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        summary: "High fraud rate detected"
+        description: "High risk transaction rate exceeded threshold."
+
