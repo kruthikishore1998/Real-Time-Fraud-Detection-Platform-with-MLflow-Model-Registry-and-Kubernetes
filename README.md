@@ -7,7 +7,7 @@
 
 This project implements a production-style, real-time fraud detection system with dynamic model versioning, observability, and alerting.
 
-Unlike traditional ML deployments where models are baked into containers, this platform loads the active model directly from the MLflow Model Registry at runtime. Model upgrades do not require rebuilding Docker images.
+This platform loads the active model directly from the MLflow Model Registry at runtime. Model upgrades do not require rebuilding Docker images.
 
 ---
 ## 🏗 System Architecture
